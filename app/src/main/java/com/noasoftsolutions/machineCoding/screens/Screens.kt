@@ -8,15 +8,15 @@ sealed class Screens(
     val outlineIcon: Int,
     val filledIcon: Int
 ) {
-    object HomeScreen :
+    data object HomeScreen :
         Screens("home_screen", "Home", R.drawable.house_outline, R.drawable.house_filled)
 
-    object BankScreen :
+    data object BankScreen :
         Screens("bank_screen", "Bank", R.drawable.bank_outline, R.drawable.bank_filled)
 
-    object HistoryScreen :
+    data object HistoryScreen :
         Screens("history_screen", "History", R.drawable.history_outline, R.drawable.history_outline)
 
-    object ProfileScreen :
+    data object ProfileScreen :
         Screens("profile_screen", "Profile", R.drawable.profile_outline, R.drawable.profile_filled)
 }

@@ -2,7 +2,6 @@ package com.noasoftsolutions.machineCoding
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -21,7 +20,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -36,7 +34,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.noasoftsolutions.machineCoding.comman.Comman.TAG
 import com.noasoftsolutions.machineCoding.screens.BankScreen
 import com.noasoftsolutions.machineCoding.screens.HistoryScreen
 import com.noasoftsolutions.machineCoding.screens.HomeScreen
@@ -75,7 +72,7 @@ class MainActivity : ComponentActivity() {
                     }) { innerPadding ->
                     HomeNavigationComponent(
                         navController,
-                        modifier = Modifier.padding(innerPadding),viewModel
+                        modifier = Modifier.padding(innerPadding), viewModel
                     )
                 }
             }
