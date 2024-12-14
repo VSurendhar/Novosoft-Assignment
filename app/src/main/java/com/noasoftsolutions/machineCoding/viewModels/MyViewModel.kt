@@ -39,7 +39,7 @@ class MyViewModel @Inject constructor(private val repository: Repository) : View
 
                     is ApiResult.Error -> {
                         println("Error fetching seats: ${result.message}")
-                        _showErrorToastChannel.send("Error Fetching Seats")
+                        _showErrorToastChannel.send("Error Fetching Users")
                     }
                 }
             }
