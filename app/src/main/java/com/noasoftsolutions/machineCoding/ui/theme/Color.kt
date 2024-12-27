@@ -14,3 +14,5 @@ val primaryColor = Color(0xFF42794A)
 val lightGreenColor = Color(0xFFA8D1AE)
 
 val backgroundColor = Color(0xFFF5F5F5)
+val cardBorderColor = Color(0xFFDDDDDD)
+val itemHeadingGray = Color(0xFF999999)

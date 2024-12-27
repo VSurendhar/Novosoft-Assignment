@@ -28,6 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -48,8 +50,16 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+        insetsController.isAppearanceLightStatusBars = false
+
         setContent {
+
+            enableEdgeToEdge()
 
             var selectedIndex by rememberSaveable { mutableIntStateOf(0) }
             val navController = rememberNavController()
@@ -72,7 +82,10 @@ class MainActivity : ComponentActivity() {
                     }) { innerPadding ->
                     HomeNavigationComponent(
                         navController,
-                        modifier = Modifier.padding(innerPadding), viewModel
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .padding(top = 10.dp)
+                            .padding(horizontal = 3.dp), viewModel
                     )
                 }
             }

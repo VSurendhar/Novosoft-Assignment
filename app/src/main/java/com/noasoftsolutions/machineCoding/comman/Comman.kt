@@ -19,6 +19,11 @@ object Comman {
         BankTitleCardDetail("Bank of Baroda", "₹2,36,000.47", R.drawable.bob)
     )
 
+    val blankBankCard = listOf(
+        BankTitleCardDetail("Qpay wallet", "₹2,36,000.47", R.drawable.wallet),
+        BankTitleCardDetail("Bank 1", "₹0.00", R.drawable.bank_outline)
+    )
+
     val sbiDetails = BankCard(
         accountNumber = "XXXXXXXXXXXX4536",
         ifsc = "KKBK0008798",
@@ -26,7 +31,7 @@ object Comman {
         accountBalance = "₹2,36,000.47",
         leftButton = {},
         rightButton = {},
-        img = R.drawable.sbi
+        img = R.drawable.sbi,
     )
 
     val receiveMoneyOptions = listOf(
@@ -87,7 +92,7 @@ object Comman {
             Options(
                 primaryText = "Permissions",
                 secondaryText = "Manage data sharing settings",
-                icon = R.drawable.document
+                icon = R.drawable.privacy_policy
             )
         )
 
@@ -107,7 +112,11 @@ object Comman {
             secondaryText = "Reset your app password",
             icon = R.drawable.privacy_policy
         ),
-        Options(primaryText = "About us", secondaryText = "About Us", icon = R.drawable.about_us)
+        Options(
+            primaryText = "About us",
+            secondaryText = "Reset your app password",
+            icon = R.drawable.about_us
+        )
     )
 
 

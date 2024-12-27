@@ -20,6 +20,9 @@ class MyViewModel @Inject constructor(private val repository: Repository) : View
     private val _userList = MutableStateFlow<List<User>>(emptyList())
     val users = _userList.asStateFlow()
 
+    private var _showBankCards = MutableStateFlow<Boolean>(true)
+    val showBankCards = _showBankCards.asStateFlow()
+
     private val _showErrorToastChannel = Channel<String>()
     val toastMessages = _showErrorToastChannel.receiveAsFlow()
 
@@ -44,6 +47,10 @@ class MyViewModel @Inject constructor(private val repository: Repository) : View
                 }
             }
         }
+    }
+
+    fun showBankCards() {
+        _showBankCards.value = false
     }
 
 }
